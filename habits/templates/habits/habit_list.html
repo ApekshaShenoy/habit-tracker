@@ -1,0 +1,15 @@
+<h1>My Habits</h1>
+<ul>
+  {% for habit in habits %}
+    <li>
+      {{ habit.name }} -
+      {% if habit.is_completed %}
+        ✅ Done
+      {% else %}
+        ❌ Not done -
+        <a href="{% url 'mark_as_done' habit.id %}">Mark as done</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+<a href="{% url 'add_habit' %}">Add Habit</a>

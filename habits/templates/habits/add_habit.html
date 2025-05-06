@@ -1,0 +1,7 @@
+<h1>Add a New Habit</h1>
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="name" placeholder="Habit name">
+  <button type="submit">Add</button>
+</form>
+<a href="{% url 'habit_list' %}">Back to list</a>
